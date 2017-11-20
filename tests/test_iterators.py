@@ -3,14 +3,12 @@ from exercises.iterators import Cubes, Primes, Fibonacci, Alphabet, Permutations
 import json
 
 
-@pytest.mark.skip('Not implemented yet.')
 def test_cubes_is_iterator():
     assert '__init__' in dir(Cubes)
     iterator = iter(Cubes())
     assert '__next__' in dir(iterator)
 
 
-@pytest.mark.skip('Not implemented yet.')
 def test_cubes():
     c = iter(Cubes())
     for i in range(1, 1001):
@@ -34,14 +32,12 @@ def test_primes():
         assert next(p) == prime
 
 
-@pytest.mark.skip('Not implemented yet.')
 def test_fibonnaci_is_iterator():
     assert '__init__' in dir(Fibonacci)
     iterator = iter(Fibonacci())
     assert '__next__' in dir(iterator)
 
 
-@pytest.mark.skip('Not implemented yet.')
 def test_fibonacci():
     with open('tests/data_fibonacci.json') as file:
         data = json.load(file)
@@ -51,14 +47,12 @@ def test_fibonacci():
         assert next(f) == fibonacci
 
 
-@pytest.mark.skip('Not implemented yet.')
 def test_alphabet_is_iterator():
     assert '__init__' in dir(Alphabet)
     iterator = iter(Alphabet())
     assert '__next__' in dir(iterator)
 
 
-@pytest.mark.skip('Not implemented yet.')
 def test_alphabet():
     data = ['Alef', 'Bet', 'Gimel', 'Dalet', 'He', 'Vav', 'Zayin', 'Het',
             'Tet', 'Yod', 'Kaf', 'Lamed', 'Mem', 'Nun', 'Samekh', 'Ayin',
@@ -70,13 +64,11 @@ def test_alphabet():
     with pytest.raises(StopIteration):
         next(a)
 
-
 @pytest.mark.skip('Not implemented yet.')
 def test_permutations_is_iterator():
     assert '__init__' in dir(Permutations)
     iterator = iter(Permutations())
     assert '__next__' in dir(iterator)
-
 
 @pytest.mark.skip('Not implemented yet.')
 def test_permutations():
@@ -99,14 +91,12 @@ def test_permutations():
         expected_result.remove(value)
 
 
-@pytest.mark.skip('Not implemented yet.')
 def test_look_and_say_is_iterator():
     assert '__init__' in dir(LookAndSay)
     iterator = iter(LookAndSay())
     assert '__next__' in dir(iterator)
 
 
-@pytest.mark.skip('Not implemented yet.')
 def test_look_and_say():
     with open('tests/data_lookandsay.json') as file:
         data = json.load(file)

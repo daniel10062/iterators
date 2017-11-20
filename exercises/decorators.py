@@ -18,4 +18,18 @@ def rovarsprak(F):
     Funktionen som dekoreras kan antas returnera textsträngar. Dessa översätts
     av decoratorn till rövarspråket.
     """
-    pass
+    @wraps(F)
+    def dec_rovar(*args, **kwargs):
+        result = ""
+        consonants = ["b", "c", "d", "f", "g", "h", "j", "k", "l", "m",
+                      "n", "p", "q", "r", "s", "t", "v", "w", "x", "z"]
+        # consonants = "bcdfghjklmnpqrstvwxy"
+        data = F(*args, **kwargs)
+        for letter in data:
+            if letter in consonants:
+                result = result + letter + "o" + letter
+            else:
+                result = result + letter
+
+        return result
+    return dec_rovar

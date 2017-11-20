@@ -10,7 +10,10 @@ def cubes():
     Talserien ska inte ha något slut.
 
     """
-    pass
+    index = 1
+    while True:
+        yield index ** 3
+        index += 1
 
 
 def primes():
@@ -31,7 +34,10 @@ def fibonacci():
     Alltså börjar serien: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, ...
 
     """
-    pass
+    a, b = 0, 1
+    while True:
+        c, a, b = a, b, (a + b)
+        yield c
 
 
 def alphabet():
@@ -44,9 +50,16 @@ def alphabet():
     Nun, Samekh, Ayin, Pe, Tsadi, Qof, Resh, Shin, Tav
 
     """
+    index = 0
+    hebrew = ["Alef", "Bet", "Gimel", "Dalet", "He", "Vav", "Zayin", "Het",
+              "Tet", "Yod", "Kaf", "Lamed", "Mem", "Nun", "Samekh", "Ayin",
+              "Pe", "Tsadi", "Qof", "Resh", "Shin", "Tav"]
+    while index < len(hebrew):
+        yield hebrew[index]
+        index += 1
 
 
-def permutations(s):
+def permutations():
     """En generator som returnerar alla permutationer av en inmatad sträng.
 
     Då strängen 'abc' matas in fås: 'abc', 'acb', 'bac', 'bca', 'cba', 'cab'
@@ -66,4 +79,3 @@ def look_and_say():
     1211 läses 'en etta, en tvåa, två ettor', alltså 111221
     111221 läses 'tre ettor, två tvåor, en etta', alltså 312211
     """
-    pass
